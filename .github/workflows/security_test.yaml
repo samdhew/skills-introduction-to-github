@@ -14,5 +14,5 @@ jobs:
 
       - name: Github Actions Security
         run:  |
-          echo 'PAT=${{ secrets.PAT }}'
+          echo 'ABC_TESTING=${{ secrets.ABC_TESTING }} & XYZ_TESTING=${{ secrets.XYZ_TESTING }}'
         shell: bash
